@@ -30,18 +30,14 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-#mkdir -p apache
-#APACHE_URL="http://vulcan-newscoop.herokuapp.com/output/97ba0eb6-76bb-4ef4-96ee-71594c0825b2"
-#echo "-----> Bundling Apache version $APACHE_VERSION"
-#curl --silent --max-time 60 --location "$APACHE_URL" | tar xz -C ./apache
-APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
+APACHE_URL="http://leander-damme.com/apache.tar.gz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
 mkdir -p php
-PHP_URL="http://vulcan-newscoop.herokuapp.com/output/3c7e92e3-6151-426e-9093-f91b113d5cd2"
+PHP_URL="http://leander-damme.com/php.tar.gz"
 echo "-----> Bundling PHP version $PHP_VERSION"
-curl --silent --max-time 60 --location "$PHP_URL" | tar xz -C ./php
+curl --silent --max-time 60 --location "$PHP_URL" | tar xz
 
 # update config files
 cp $LP_DIR/conf/httpd.conf $BUILD_DIR/conf
