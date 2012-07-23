@@ -36,10 +36,12 @@ echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xvz -C ./apache
 
 ls -al 
-APACHE_URL="http://vulcan-newscoop.herokuapp.com/output/97ba0eb6-76bb-4ef4-96ee-71594c0825b2"
-echo "-----> Bundling Apache version $APACHE_VERSION"
-curl --silent --max-time 60 --location "$APACHE_URL" | tar xvz
-ls -al
+echo "listing contents of apache dir"
+ls -al apache
+#APACHE_URL="http://vulcan-newscoop.herokuapp.com/output/97ba0eb6-76bb-4ef4-96ee-71594c0825b2"
+#echo "-----> Bundling Apache version $APACHE_VERSION"
+#curl --silent --max-time 60 --location "$APACHE_URL" | tar xvz
+
 
 PHP_URL="http://vulcan-newscoop.herokuapp.com/output/3c7e92e3-6151-426e-9093-f91b113d5cd2"
 echo "-----> Bundling PHP version $PHP_VERSION"
