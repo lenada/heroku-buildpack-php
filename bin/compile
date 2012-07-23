@@ -34,12 +34,15 @@ APACHE_URL="http://leander-damme.com/apache.tar.gz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
-mkdir -p php
 PHP_URL="http://leander-damme.com/php.tar.gz"
 echo "-----> Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
 
-# update config files
+# remove old default apache config file
+if [ -f $APACHE_PATH/conf/httpd.conf ]; then
+  rm $APACHE_PATH/conf/httpd.conf
+fi
+
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 cp $LP_DIR/conf/php.ini php
 
