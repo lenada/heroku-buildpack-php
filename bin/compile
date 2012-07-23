@@ -30,6 +30,7 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
+mkdir -p apache
 APACHE_URL="http://vulcan-newscoop.herokuapp.com/output/97ba0eb6-76bb-4ef4-96ee-71594c0825b2"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xvz -C ./apache
