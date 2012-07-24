@@ -45,7 +45,10 @@ fi
 
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 cp $LP_DIR/conf/php.ini php
-ls -al php
+
+$BUILD_DIR/php/bin/php -i | grep php.ini 
+$BUILD_DIR/php/bin/php -i | grep date
+
 # make php available on bin
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
