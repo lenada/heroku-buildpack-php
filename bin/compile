@@ -44,8 +44,8 @@ if [ -f $APACHE_PATH/conf/httpd.conf ]; then
 fi
 
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
-cp $LP_DIR/conf/php.ini php/etc
-
+cp $LP_DIR/conf/php.ini php
+ls -al php
 # make php available on bin
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
